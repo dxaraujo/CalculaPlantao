@@ -1,4 +1,10 @@
 {
+    "description": "Calcular o valor dor plantões médicos",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/danielxaraujo/CalculaPlantao"
+    },
+    "license": "MIT",
     "scripts": {
         "typings": "typings",
         "postinstall": "typings install"
