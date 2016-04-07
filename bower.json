@@ -1,0 +1,9 @@
+{
+    "name": "Calcula Plantão",
+    "version": "1.0.0",
+    "description": "Calcular o valor dor plantões médicos",
+    "dependencies": {
+        "bootstrap": "^v4.0.0-alpha.2",
+        "font-awesome": "^4.5.0"
+    }
+}

@@ -1,0 +1,8 @@
+.DS_Store
+app/ts/**/*.js
+app/ts/**/*.js.map
+bower_components
+node_modules
+typings
+.bowerrc
+.typingsrc
