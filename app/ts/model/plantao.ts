@@ -7,6 +7,7 @@ export class Plantao {
         public date: Date,
         public turno: Turno,
         public instituicao: Instituicao,
+        public valor: number,
         public pago: boolean
     ) { }
 }

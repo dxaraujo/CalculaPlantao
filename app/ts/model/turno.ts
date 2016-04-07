@@ -1,6 +1,6 @@
 export enum Turno {
-    MANHA,
-    TARDE,
-    MANHA_TARDE,
-    NOITE
+    MANHA = <any> "Manhã",
+    TARDE = <any> "Tarde",
+    MANHA_TARDE = <any> "Manhã e Tarde",
+    NOITE = <any> "Noite"
 }

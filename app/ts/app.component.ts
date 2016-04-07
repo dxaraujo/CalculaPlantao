@@ -1,8 +1,6 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-import {HomeComponent} from './home.component';
-import {ListComponent} from './list.component';
-import {DetailComponent} from './detail.component';
+import {HomeComponent, ListComponent, DetailComponent} from './component';
 
 @Component({
     selector: '[app]',
