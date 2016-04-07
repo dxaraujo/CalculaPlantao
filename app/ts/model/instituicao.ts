@@ -3,6 +3,7 @@ export class Instituicao {
         public id: number,
         public date: Date,
         public name: string,
-        public desc: string
+        public desc: string,
+        public status: boolean
     ) { }
 }
