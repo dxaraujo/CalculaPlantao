@@ -1,6 +1,8 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-import {HomeComponent, ListComponent, DetailComponent} from './component';
+import {HomeComponent, ListComponent, DetailComponent, FeriadoListComponent, FeriadoFormComponent} from './component';
+
+declare var jQuery:JQueryStatic;
 
 @Component({
     selector: '[app]',
@@ -10,6 +12,13 @@ import {HomeComponent, ListComponent, DetailComponent} from './component';
 @RouteConfig([
     { path: '/home', name: 'Home', component: HomeComponent, useAsDefault: true },
     { path: '/list',   name: 'List', component: ListComponent },
-    { path: '/detail', name: 'Detail', component: DetailComponent }
+    { path: '/detail', name: 'Detail', component: DetailComponent },
+    { path: '/feriado', name: 'Feriado', component: FeriadoListComponent },
+    { path: '/feriadoForm', name: 'FeriadoForm', component: FeriadoFormComponent }
 ])
-export class AppComponent { }
+export class AppComponent {
+
+    constructor() {
+        jQuery.getScript('bootstrap/dist/js/bootstrap.min.js');
+    }
+}

@@ -1,0 +1,16 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Data</th>
+            <th>Nome</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="#feriado of feriados">
+            <th scope="row">{{feriado.id}}</th>
+            <td>{{feriado.date | date:"dd/MM/yyyy"}}</td>
+            <td>{{feriado.name}}</td>
+        </tr>
+    </tbody>
+</table>

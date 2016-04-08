@@ -1,5 +1,5 @@
-<header>
-    <nav class="navbar navbar-light bg-faded">
+<header style="padding-bottom:54px;">
+    <nav class="navbar navbar-fixed-top navbar-light bg-faded">
         <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar">
             &#9776;
         </button>
@@ -15,10 +15,17 @@
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['Detail']">Detalhe</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['Feriado']">Feriado</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['FeriadoForm']">Feriado form</a>
+                </li>
             </ul>
         </div>
     </nav>
 </header>
-<div class="container">
+<div class="container-fluid">
+
     <router-outlet></router-outlet>
 </div>

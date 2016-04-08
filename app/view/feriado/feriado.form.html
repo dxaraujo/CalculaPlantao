@@ -1,0 +1,13 @@
+<form #f="ngForm" (ngSubmit)="salvar(f.value)">
+    <input id="feriado.id" type="hidden" ngControl="id">
+    <fieldset class="form-group">
+        <label for="feriado.date">Data:</label>
+        <input id="feriado.date" type="text" class="form-control" ngControl="date" placeholder="00/00/0000">
+        <small class="text-muted">Cadastre a data do feriado.</small>
+    </fieldset>
+    <fieldset class="form-group">
+        <label for="feriado.name">Descrição:</label>
+        <input id="feriado.name" type="text" class="form-control" ngControl="name" placeholder="Descrição do feriado">
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
