@@ -5,8 +5,7 @@ import {Feriado} from '../../model';
 
 @Component({
     templateUrl: '../../../view/feriado/feriado.list.html',
-    directives: [ROUTER_DIRECTIVES],
-    providers: [FeriadoService]
+    directives: [ROUTER_DIRECTIVES]
 })
 export class FeriadoListComponent {
 

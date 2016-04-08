@@ -6,8 +6,7 @@ import {Feriado} from '../../model';
 
 @Component({
     templateUrl: '../../../view/feriado/feriado.form.html',
-    directives: [FORM_DIRECTIVES],
-    providers: [FeriadoService]
+    directives: [FORM_DIRECTIVES]
 })
 export class FeriadoFormComponent {
 
