@@ -10,11 +10,8 @@ declare var jQuery:JQueryStatic;
     directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-    { path: '/home', name: 'Home', component: HomeComponent, useAsDefault: true },
-    { path: '/list',   name: 'List', component: ListComponent },
-    { path: '/detail', name: 'Detail', component: DetailComponent },
-    { path: '/feriado', name: 'Feriado', component: FeriadoListComponent },
-    { path: '/feriadoform/:feriado', name: 'FeriadoForm', component: FeriadoFormComponent }
+    { path: '/feriado', name: 'Feriado', component: FeriadoListComponent, useAsDefault: true },
+    { path: '/feriadoform/:id', name: 'FeriadoForm', component: FeriadoFormComponent }
 ])
 export class AppComponent {
 

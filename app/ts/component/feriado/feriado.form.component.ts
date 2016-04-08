@@ -9,24 +9,21 @@ import {Feriado} from '../../model';
 })
 export class FeriadoFormComponent {
 
-    @Input() feriado: Feriado;
+    @Input() id: number;
     form: ControlGroup
 
     constructor(params:RouteParams, fb: FormBuilder) {
-        this.feriado = <Feriado><any>params.get('feriado');
+        this.id = <number><any>params.get('id');
+        console.log(`Chegou o id: ${this.id}`);
         this.form = fb.group({
-            "date": [this.feriado ? this.feriado.date.toISOString() : '', Validators.required],
-            "name": [this.feriado ? this.feriado.name : '', Validators.required]
+            "id": [this.id ? this.id : '', Validators.required],
+            "date": ['', Validators.required],
+            "name": ['', Validators.required]
         });
     }
 
     salvar(value) {
         var f = this.form.value;
-        if (!this.feriado) {
-            this.feriado = new Feriado(0, new Date(), "");
-        }
-        this.feriado.date = new Date(f.date.split("-"));
-        this.feriado.name = f.name;
-        console.log(this.feriado);
+        console.log(f);
     }
 }
