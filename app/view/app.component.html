@@ -19,13 +19,12 @@
                     <a class="nav-link" [routerLink]="['Feriado']">Feriado</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['FeriadoForm']">Feriado form</a>
+                    <a class="nav-link" [routerLink]="['FeriadoForm', {feriado:null}]">Feriado form</a>
                 </li>
             </ul>
         </div>
     </nav>
 </header>
 <div class="container-fluid">
-
     <router-outlet></router-outlet>
 </div>

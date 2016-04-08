@@ -14,7 +14,7 @@ declare var jQuery:JQueryStatic;
     { path: '/list',   name: 'List', component: ListComponent },
     { path: '/detail', name: 'Detail', component: DetailComponent },
     { path: '/feriado', name: 'Feriado', component: FeriadoListComponent },
-    { path: '/feriadoForm', name: 'FeriadoForm', component: FeriadoFormComponent }
+    { path: '/feriadoform/:feriado', name: 'FeriadoForm', component: FeriadoFormComponent }
 ])
 export class AppComponent {
 
