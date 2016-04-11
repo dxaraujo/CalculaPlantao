@@ -4,10 +4,9 @@ import {Feriado} from '../model';
 @Injectable()
 export class FeriadoService {
 
-    feriados: Array<Feriado>;
+    feriados: Array<Feriado> = new Array<Feriado>();
 
-    ngOnInit() {
-        this.feriados = new Array<Feriado>();
+    constructor() {
         this.addFeriado(new Feriado(0, new Date(2016,0,1), 'Feriado de Ano novo'))
         this.addFeriado(new Feriado(0, new Date(2016,1,8), 'Carnaval (ponto facultativo)'))
         this.addFeriado(new Feriado(0, new Date(2016,1,9), 'Carnaval (ponto facultativo)'))
