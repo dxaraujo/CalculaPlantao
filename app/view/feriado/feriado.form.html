@@ -8,6 +8,6 @@
         <label for="feriado.name">Descrição:</label>
         <input id="feriado.name" type="text" class="form-control" ngControl="name" placeholder="Descrição do feriado" required>
     </fieldset>
-    <button type="submit" class="btn btn-success" [disabled]="!form.valid"><i class="fa fa-check"></i> Salvar</button>
-    {{form.valid}}<br>
+    <button type="submit" class="btn btn-success btn-sm" [disabled]="!form.valid"><i class="fa fa-check"></i> Salvar</button>
+    <button type="submit" class="btn btn-sm" [routerLink]="['Feriado']"><i class="fa fa-arrow-left"></i> Voltar</button>
 </form>

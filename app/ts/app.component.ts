@@ -14,7 +14,7 @@ declare var jQuery:JQueryStatic;
 })
 @RouteConfig([
     { path: '/feriado', name: 'Feriado', component: FeriadoListComponent, useAsDefault: true },
-    { path: '/feriado/:id', name: 'FeriadoDetail', component: FeriadoFormComponent }
+    { path: '/feriadoDetail', name: 'FeriadoDetail', component: FeriadoFormComponent }
 ])
 export class AppComponent {
 
