@@ -11,11 +11,16 @@ export class FeriadoListComponent {
 
     feriados : Array<Feriado>;
 
-    constructor(public feriadoService: FeriadoService) {
-        this.feriados = this.feriadoService.getFeriados();
+    constructor(
+        private _service: FeriadoService
+    ) {}
+
+    ngOnInit() {
+        this.feriados = this._service.getFeriados();
     }
 
-    apagarFeriado(feriado) {
-        console.log(feriado);
+    apagarFeriado(id) {
+        this._service.apagarFeriado(id);
+        this.feriados = this._service.getFeriados();
     }
 }

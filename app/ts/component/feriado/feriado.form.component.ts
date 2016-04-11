@@ -6,22 +6,27 @@ import {Feriado} from '../../model';
 
 @Component({
     templateUrl: '../../../view/feriado/feriado.form.html',
-    directives: [FORM_DIRECTIVES]
+    directives: [FORM_DIRECTIVES, ROUTER_DIRECTIVES]
 })
 export class FeriadoFormComponent {
 
     @Input() id: number;
     feriado : Feriado;
     form: ControlGroup;
-    router: Router;
 
-    constructor(public feriadoService: FeriadoService, router:Router, params:RouteParams, fb: FormBuilder) {
-        this.router = router;
-        this.id = <number><any>params.get('id');
+    constructor(
+        private _router:Router,
+        private _routeParams:RouteParams,
+        private _formBuilder:FormBuilder,
+        private _service:FeriadoService
+    ){}
+
+    ngOnInit() {
+        this.id = <number><any> this._routeParams.get('id');
         if (this.id) {
-            this.feriado = this.feriadoService.getFeriado(this.id);
+            this.feriado = this._service.getFeriado(this.id);
         }
-        this.form = fb.group({
+        this.form = this._formBuilder.group({
             "id":   [this.feriado ? this.feriado.id   : ''],
             "date": [this.feriado ? this.feriado.date.toISOString().split("T")[0] : '', Validators.required],
             "name": [this.feriado ? this.feriado.name : '', Validators.required]
@@ -30,12 +35,13 @@ export class FeriadoFormComponent {
 
     salvar(value) {
         var f = this.form.value;
-        if (!this.feriado) {
-            this.feriado = new Feriado(0, new Date(), '');
+        if (this.feriado) {
+            this.feriado.date = new Date(f.date.split("-"));
+            this.feriado.name = f.name;
+        } else {
+            this.feriado = new Feriado(0, new Date(f.date.split("-")) , f.name);
+            this._service.addFeriado(this.feriado);
         }
-        this.feriado.date = new Date(f.date.split("-"));
-        this.feriado.name = f.name;
-        this.router.navigate(['Feriado']);
-        this.feriadoService.addFeriado(this.feriado);
+        this._router.navigate(['Feriado']);
     }
 }
