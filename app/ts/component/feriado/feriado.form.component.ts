@@ -25,7 +25,6 @@ export class FeriadoFormComponent {
         this.id = <number><any> this._routeParams.get('id');
         if (this.id) {
             this.feriado = this._service.getFeriado(this.id);
-            console.log(JSON.stringify(this.feriado));
         }
         this.form = this._formBuilder.group({
             "id":   [this.feriado ? this.feriado.id   : ''],
