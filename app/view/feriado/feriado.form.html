@@ -1,13 +1,21 @@
-<form [ngFormModel]="form" (ngSubmit)="salvar()">
-    <fieldset class="form-group">
-        <label for="feriado.date">Data:</label>
-        <input id="feriado.date" type="date" class="form-control" ngControl="date" placeholder="00/00/0000" required>
-        <small class="text-muted">Data no formato dd/mm/aaaa</small>
-    </fieldset>
-    <fieldset class="form-group">
-        <label for="feriado.name">Descrição:</label>
-        <input id="feriado.name" type="text" class="form-control" ngControl="name" placeholder="Descrição do feriado" required>
-    </fieldset>
-    <button type="submit" class="btn btn-success btn-sm" [disabled]="!form.valid"><i class="fa fa-check"></i> Salvar</button>
-    <button type="submit" class="btn btn-sm" [routerLink]="['Feriado']"><i class="fa fa-arrow-left"></i> Voltar</button>
-</form>
+<div class="container-fluid">
+    <form [ngFormModel]="form" (ngSubmit)="salvar()">
+        <fieldset class="form-group" *ngIf="id">
+            <label for="feriado.id">Id:</label>
+            <input id="feriado.id" type="text" class="form-control" ngControl="id" readonly>
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="feriado.date">Data:</label>
+            <input id="feriado.date" type="date" class="form-control" ngControl="date" placeholder="00/00/0000" required>
+            <small class="text-muted">Data no formato dd/mm/aaaa</small>
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="feriado.name">Descrição:</label>
+            <input id="feriado.name" type="text" class="form-control" ngControl="name" placeholder="Descrição do feriado" required>
+        </fieldset>
+        <button type="submit" class="btn btn-success btn-sm" [disabled]="!form.valid">
+            <i class="fa fa-check"></i>Salvar</button>
+        <button type="submit" class="btn btn-sm" [routerLink]="['Feriado']">
+            <i class="fa fa-arrow-left"></i>Voltar</button>
+    </form>
+</div>

@@ -6,7 +6,6 @@
                 <th>Data</th>
                 <th>Nome</th>
                 <th></th>
-                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -14,10 +13,20 @@
                 <th scope="row">{{f.id}}</th>
                 <td>{{f.date | date:"dd/MM/yyyy"}}</td>
                 <td>{{f.name}}</td>
-                <td><a class="btn btn-info btn-sm" [routerLink]="['FeriadoDetail', {id: f.id}]"><i class="fa fa-edit"></i></a></td>
-                <td><a class="btn btn-warning btn-sm" (click)="apagarFeriado(f.id)"><i class="fa fa-trash"></i></a></td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <button class="btn btn-info btn-sm" [routerLink]="['FeriadoDetail', {id: f.id}]">
+                            <i class="fa fa-edit"></i>
+                        </button>
+                        <button class="btn btn-warning btn-sm" (click)="apagarFeriado(f.id)">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+                </td>
             </tr>
         </tbody>
     </table>
-    <a class="btn btn-success btn-sm" [routerLink]="['FeriadoDetail']"><i class="fa fa-plus-circle"></i> Adicionar</a>
+    <button class="btn btn-success btn-sm" [routerLink]="['FeriadoDetail']">
+        <i class="fa fa-plus-circle"></i>Adicionar
+    </button>
 </div>
