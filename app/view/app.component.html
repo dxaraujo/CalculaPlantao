@@ -4,6 +4,9 @@
             <ul class="nav metismenu" id="side-menu">
                 <li class="nav-header">
                     <div class="dropdown profile-element">
+                        <span>
+                            <img alt="image" class="img-circle" src="img/profile_small.jpg">
+                        </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear">
                                 <span class="block m-t-xs">
@@ -25,16 +28,20 @@
                     </div>
                 </li>
                 <li>
-                    <a aria-expanded="false" [routerLink]="['Feriado']" href="#">
+                    <a aria-expanded="false">
                         <i class="fa fa-th-large"></i>
-                        <span class="nav-label">Feriado</span>
+                        <span class="nav-label">Feriados</span>
+                        <span class="fa arrow"></span>
                     </a>
-                </li>
-                <li>
-                    <a aria-expanded="false" [routerLink]="['FeriadoDetail']" href="#">
-                        <i class="fa fa-th-large"></i>
-                        <span class="nav-label">Feriado Detail</span>
-                    </a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a [routerLink]="['Feriado']">Lista de Feriados</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['FeriadoDetail']">Cadstro de Feriados</a>
+                        </li>
+
+                    </ul>
                 </li>
             </ul>
 
@@ -42,7 +49,7 @@
     </nav>
     <div id="page-wrapper" class="gray-bg">
         <div class="row border-bottom">
-            <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
                     <sidebar></sidebar>
                     <form role="search" class="navbar-form-custom" method="post" action="#">
@@ -62,9 +69,7 @@
 
             </nav>
         </div>
-        <div class="wrapper wrapper-content animated fadeInRight">
-            <router-outlet></router-outlet>
-        </div>
+        <router-outlet></router-outlet>
         <div class="footer">
             <div class="pull-right">
                 10GB of
