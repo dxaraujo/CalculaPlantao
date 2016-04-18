@@ -3,8 +3,6 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {FeriadoService} from '../../service';
 import {Feriado} from '../../model';
 
-declare var jQuery:JQueryStatic;
-
 @Component({
     templateUrl: '../../../view/feriado/feriado.list.html',
     directives: [ROUTER_DIRECTIVES]
