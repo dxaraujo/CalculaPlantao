@@ -18,7 +18,8 @@ declare var jQuery:JQueryStatic;
 ])
 export class AppComponent {
 
-    constructor() {
+    ngOnInit() {
+        jQuery('#side-menu').metisMenu();
         jQuery.getScript('bootstrap/dist/js/bootstrap.min.js');
         jQuery.getScript('js/inspinia.js');
     }

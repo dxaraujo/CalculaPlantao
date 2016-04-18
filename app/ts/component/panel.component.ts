@@ -1,11 +1,11 @@
-declare var jQuery:JQueryStatic;
+declare var $:JQueryStatic;
 
 export abstract class PanelComponent {
 
     public collapsePanel(event) {
-        var ibox = jQuery(event.target).closest('div.ibox');
-        var button = jQuery(event.target).closest('i');
-        var content = ibox.find('div.ibox-content');
+        var ibox: JQuery = $(event.target).closest('div.ibox');
+        var button: JQuery = $(event.target).closest('i');
+        var content: JQuery = ibox.find('div.ibox-content');
         content.slideToggle(200);
         button.toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
         ibox.toggleClass('').toggleClass('border-bottom');
@@ -16,18 +16,18 @@ export abstract class PanelComponent {
     }
 
     public closePanel (event) {
-        var content = jQuery(event.target).closest('div.ibox');
+        var content = $(event.target).closest('div.ibox');
         content.remove();
     }
 
     public fullScreenPanel(event) {
-        var ibox = jQuery(event.target).closest('div.ibox');
-        var button = jQuery(event.target).closest('i');
+        var ibox = $(event.target).closest('div.ibox');
+        var button = $(event.target).closest('i');
         jQuery('body').toggleClass('fullscreen-ibox-mode');
         button.toggleClass('fa-expand').toggleClass('fa-compress');
         ibox.toggleClass('fullscreen');
         setTimeout(function () {
-            jQuery(window).trigger('resize');
+            $(window).trigger('resize');
         }, 100);
     }
 }

@@ -10,8 +10,9 @@
         "noImplicitAny": false
     },
     "exclude": [
+        "bower_components",
         "node_modules",
-        "typings/main",
+        "typings/main/**/*.ts",
         "typings/main.d.ts"
     ]
 }
