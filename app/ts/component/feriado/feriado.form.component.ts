@@ -1,6 +1,7 @@
 import {Component, Input, Inject} from 'angular2/core';
 import {FormBuilder, ControlGroup, Validators, FORM_DIRECTIVES} from 'angular2/common';
 import {Router, RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
+import {PanelComponent} from '../panel.component';
 import {FeriadoService} from '../../service';
 import {Feriado} from '../../model';
 
@@ -8,7 +9,7 @@ import {Feriado} from '../../model';
     templateUrl: '../../../view/feriado/feriado.form.html',
     directives: [FORM_DIRECTIVES, ROUTER_DIRECTIVES]
 })
-export class FeriadoFormComponent {
+export class FeriadoFormComponent extends PanelComponent {
 
     @Input() id: number;
     feriado : Feriado;
@@ -19,7 +20,7 @@ export class FeriadoFormComponent {
         private _routeParams:RouteParams,
         private _formBuilder:FormBuilder,
         private _service:FeriadoService
-    ){}
+    ){ super(); }
 
     ngOnInit() {
         this.id = <number><any> this._routeParams.get('id');

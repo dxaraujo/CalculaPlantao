@@ -1,5 +1,6 @@
 import {Component, Inject} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {PanelComponent} from '../panel.component';
 import {FeriadoService} from '../../service';
 import {Feriado} from '../../model';
 
@@ -7,13 +8,13 @@ import {Feriado} from '../../model';
     templateUrl: '../../../view/feriado/feriado.list.html',
     directives: [ROUTER_DIRECTIVES]
 })
-export class FeriadoListComponent {
+export class FeriadoListComponent extends PanelComponent {
 
     feriados : Array<Feriado>;
 
     constructor(
         private _service: FeriadoService
-    ) {}
+    ) { super(); }
 
     ngOnInit() {
         this.feriados = this._service.getFeriados();

@@ -19,7 +19,7 @@ declare var jQuery:JQueryStatic;
 export class AppComponent {
 
     constructor() {
-        jQuery.getScript('js/inspinia.js');
         jQuery.getScript('bootstrap/dist/js/bootstrap.min.js');
+        jQuery.getScript('js/inspinia.js');
     }
 }
