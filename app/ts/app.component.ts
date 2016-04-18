@@ -4,8 +4,6 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {SideBarComponent, FeriadoListComponent, FeriadoFormComponent} from './component';
 import {FeriadoService} from './service';
 
-declare var jQuery:JQueryStatic;
-
 @Component({
     selector: '[app]',
     templateUrl: '../view/app.component.html',
