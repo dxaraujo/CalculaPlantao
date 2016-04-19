@@ -7,10 +7,10 @@ export class FeriadoService {
     feriados: Array<Feriado> = new Array<Feriado>();
 
     constructor() {
-        this.addFeriado(new Feriado(0, new Date(2016,0,1), 'Feriado de Ano novo'))
-        this.addFeriado(new Feriado(0, new Date(2016,1,8), 'Carnaval (ponto facultativo)'))
-        this.addFeriado(new Feriado(0, new Date(2016,1,9), 'Carnaval (ponto facultativo)'))
-        this.addFeriado(new Feriado(0, new Date(2016,1,10), 'Quarta-feira de Cinzas (ponto facultativo até as 14 horas)'))
+        this.addFeriado(new Feriado(0, new Date(2016, 0, 1), 'Feriado de Ano novo'))
+        this.addFeriado(new Feriado(0, new Date(2016, 1, 8), 'Carnaval (ponto facultativo)'))
+        this.addFeriado(new Feriado(0, new Date(2016, 1, 9), 'Carnaval (ponto facultativo)'))
+        this.addFeriado(new Feriado(0, new Date(2016, 1, 10), 'Quarta-feira de Cinzas (ponto facultativo até as 14 horas)'))
     }
 
     getFeriados() {
@@ -18,26 +18,23 @@ export class FeriadoService {
     }
 
     getFeriado(id: number) {
-        for(var i = 0; i < this.feriados.length; i++) {
-            if (this.feriados[i].id == id) {
-                return this.feriados[i];
-            }
-        }
+        return this.feriados.find((value, index, obj) => {
+            return (value.id == id)
+        });
     }
 
     addFeriado(feriado: Feriado) {
-        var id = this.feriados.length + 1;
+        let id = this.feriados.length + 1;
         feriado.id = id;
         this.feriados.push(feriado);
     }
 
     apagarFeriado(id: number) {
-        var newFeriados: Array<Feriado> = new Array<Feriado>();
-        for(var i = 0; i < this.feriados.length; i++) {
-            if (this.feriados[i].id != id) {
-                newFeriados.push(this.feriados[i]);
-            }
+        let index: number =  this.feriados.findIndex(value => {
+            return (value.id == id)
+        });
+        if (index >= 0) {
+            this.feriados.splice(index, 1);
         }
-        this.feriados = newFeriados;
     }
 }

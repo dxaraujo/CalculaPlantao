@@ -53,9 +53,11 @@ export class SideBarComponent {
         );
     }
 
-    active(event) {
-        jQuery(event.target).closest('ul.metismenu').find('li').removeClass('active');
-        jQuery(event.target).closest('li').addClass('active');
-        jQuery(event.target).closest('li').parent('ul.nav-second-level').parent('li').addClass('active');
+    active(event: MouseEvent) {
+        event.preventDefault();
+        var li = jQuery(event.currentTarget).parent('li');
+        li.closest('ul.metismenu').find('li').removeClass('active');
+        li.parent('ul.nav-second-level').parent('li').addClass('active');
+        li.addClass('active');
     }
 }
