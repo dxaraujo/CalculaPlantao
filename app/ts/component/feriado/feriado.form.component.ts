@@ -29,7 +29,7 @@ export class FeriadoFormComponent extends PanelComponent {
         }
         this.form = this._formBuilder.group({
             "id":   [this.feriado ? this.feriado.id   : ''],
-            "date": [this.feriado ? this.feriado.date.toISOString().split("T")[0] : '', Validators.required],
+            "date": [this.feriado ? this.feriado.date : '', Validators.required],
             "name": [this.feriado ? this.feriado.name : '', Validators.required]
         });
     }
@@ -37,10 +37,10 @@ export class FeriadoFormComponent extends PanelComponent {
     salvar(value) {
         var f = this.form.value;
         if (this.feriado) {
-            this.feriado.date = new Date(f.date.split("-"));
+            this.feriado.date = f.date;
             this.feriado.name = f.name;
         } else {
-            this.feriado = new Feriado(0, new Date(f.date.split("-")) , f.name);
+            this.feriado = new Feriado(0, f.date, f.name);
             this._service.addFeriado(this.feriado);
         }
         this._router.navigate(['Feriado']);

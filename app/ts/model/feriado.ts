@@ -1,7 +1,7 @@
 export class Feriado {
     constructor(
         public id: number,
-        public date: Date,
+        public date: string,
         public name: string
     ) { }
 }

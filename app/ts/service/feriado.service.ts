@@ -7,10 +7,10 @@ export class FeriadoService {
     feriados: Array<Feriado> = new Array<Feriado>();
 
     constructor() {
-        this.addFeriado(new Feriado(0, new Date(2016, 0, 1), 'Feriado de Ano novo'))
-        this.addFeriado(new Feriado(0, new Date(2016, 1, 8), 'Carnaval (ponto facultativo)'))
-        this.addFeriado(new Feriado(0, new Date(2016, 1, 9), 'Carnaval (ponto facultativo)'))
-        this.addFeriado(new Feriado(0, new Date(2016, 1, 10), 'Quarta-feira de Cinzas (ponto facultativo até as 14 horas)'))
+        this.addFeriado(new Feriado(0, '01/01/2016', 'Feriado de Ano novo'))
+        this.addFeriado(new Feriado(0, '08/02/2016', 'Carnaval (ponto facultativo)'))
+        this.addFeriado(new Feriado(0, '09/02/2016', 'Carnaval (ponto facultativo)'))
+        this.addFeriado(new Feriado(0, '10/02/2016', 'Quarta-feira de Cinzas (ponto facultativo até as 14 horas)'))
     }
 
     getFeriados() {
