@@ -16,7 +16,7 @@ import {FeriadoService} from './service';
 ])
 export class AppComponent {
 
-    ngOnInit() {
+    ngAfterViewInit() {
         jQuery('#side-menu').metisMenu();
         jQuery.getScript('bootstrap/dist/js/bootstrap.min.js');
         jQuery.getScript('js/inspinia.js');

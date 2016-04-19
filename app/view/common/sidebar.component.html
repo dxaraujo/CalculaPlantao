@@ -1,0 +1,50 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul id="side-menu" class="nav metismenu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <span>
+                        <img alt="image" class="img-circle" src="{{profile.image}}">
+                    </span>
+                    <a data-toggle="dropdown" class="dropdown-toggle">
+                        <span class="clear">
+                            <span class="block m-t-xs">
+                                <strong class="font-bold">{{profile.userName}}</strong>
+                            </span>
+                            <span class="text-muted text-xs block">{{profile.userJob}}
+                                <b class="caret"></b>
+                            </span>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                        <li>
+                            <a>Sair</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    Calc
+                </div>
+            </li>
+            <li *ngFor="#item of navigationItens">
+                <a *ngIf="item.childrens" aria-expanded="false">
+                    <i *ngIf="item.icon" class="{{item.icon}}"></i>
+                    <span class="nav-label">{{item.name}}</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <a *ngIf="!item.childrens" [routerLink]="[item.router]" (click)="active($event)">
+                    <i *ngIf="item.icon" class="{{item.icon}}"></i>
+                    <span class="nav-label">{{item.name}}</span>
+                </a>
+                <ul *ngIf="item.childrens" class="nav nav-second-level">
+                    <li *ngFor="#subitem of item.childrens">
+                        <a [routerLink]="[subitem.router]" (click)="active($event)">
+                            <i *ngIf="subitem.icon" class="{{subitem.icon}}"></i>
+                            <span class="nav-label">{{subitem.name}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
