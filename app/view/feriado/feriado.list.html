@@ -64,13 +64,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="#f of feriados">
+                            <tr *ngFor="let f of feriados">
                                 <th scope="row">{{f.id}}</th>
                                 <td>{{f.date}}</td>
                                 <td>{{f.name}}</td>
                                 <td>
                                     <div class="btn-group pull-right" role="group">
-                                        <a class="btn" [routerLink]="['FeriadoDetail', {id: f.id}]">
+                                        <a class="btn" [routerLink]="['/feriadoDetail', {id: f.id}]">
                                             <i class="fa fa-edit text-navy"></i>
                                         </a>
                                         <a class="btn" (click)="apagarFeriado(f.id)">
@@ -81,7 +81,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <button type="button" class="btn btn-primary" [routerLink]="['FeriadoDetail']">
+                    <button type="button" class="btn btn-primary" [routerLink]="['/feriadoDetail']">
                         <i class="fa fa-plus-circle"></i>
                         <span class="bold">Adicionar</span>
                     </button>

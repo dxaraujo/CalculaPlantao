@@ -26,7 +26,7 @@
                     Calc
                 </div>
             </li>
-            <li *ngFor="#item of navigationItens">
+            <li *ngFor="let item of navigationItens">
                 <a *ngIf="item.childrens" aria-expanded="false">
                     <i *ngIf="item.icon" class="{{item.icon}}"></i>
                     <span class="nav-label">{{item.name}}</span>
@@ -37,7 +37,7 @@
                     <span class="nav-label">{{item.name}}</span>
                 </a>
                 <ul *ngIf="item.childrens" class="nav nav-second-level">
-                    <li *ngFor="#subitem of item.childrens">
+                    <li *ngFor="let subitem of item.childrens">
                         <a [routerLink]="[subitem.router]" (click)="active($event)">
                             <i *ngIf="subitem.icon" class="{{subitem.icon}}"></i>
                             <span class="nav-label">{{subitem.name}}</span>

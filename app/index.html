@@ -14,26 +14,13 @@
     <link rel="stylesheet" href="bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- 1. Load libraries -->
-    <script src="es6-shim/es6-shim.min.js"></script>
-    <script src="systemjs/dist/system-polyfills.js"></script>
-    <script src="angular2/es6/dev/src/testing/shims_for_IE.js"></script>
-    <script src="angular2/bundles/angular2-polyfills.min.js"></script>
+    <script src="zone.js/dist/zone.js"></script>
+    <script src="reflect-metadata/Reflect.js"></script>
     <script src="systemjs/dist/system.src.js"></script>
-    <script src="rxjs/bundles/Rx.js"></script>
-    <script src="angular2/bundles/angular2.dev.js"></script>
-    <script src="angular2/bundles/router.dev.js"></script>
-    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.pt"></script>
     <!-- 2. Configure SystemJS -->
+    <script src="js/systemjs.config.js"></script>
     <script>
-        System.config({
-            packages: {
-                ts: {
-                    format: 'register',
-                    defaultExtension: 'js'
-                }
-            }
-        });
-        System.import('ts/boot');
+      System.import('ts').catch(function(err){ console.error(err); });
     </script>
 </head>
 
