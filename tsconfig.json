@@ -9,6 +9,9 @@
         "removeComments": false,
         "noImplicitAny": false
     },
+    "include": [
+      "app/ts/**/*.ts"
+    ],
     "exclude": [
         "bower_components/**/*.ts"
     ]
